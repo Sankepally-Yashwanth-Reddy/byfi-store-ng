@@ -95,7 +95,8 @@
                         }
                     }
 
-                    &:hover .dropdown-menu , &:focus-within .dropdown-menu{
+                    &:hover .dropdown-menu,
+                    &:focus-within .dropdown-menu {
                         display: block;
                     }
                 }
