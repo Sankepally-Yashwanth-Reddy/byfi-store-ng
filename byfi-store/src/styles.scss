@@ -2,10 +2,14 @@
 @import './assets/icons/icons.scss';
 
 :root {
-  :focus-visible {
-    outline: 2px solid #000000 !important;
+  input:focus-visible {
+    border: 2px solid #000000;
+    outline: none;
+  }
+
+  button:focus-visible {
+    border: 2px solid #000000 !important;
     box-shadow: none !important;
-    border: none !important;
   }
 }
 
