@@ -1,4 +1,5 @@
 .byfi-nav-section {
+
     .byfi-top-nav-container {
         background-color: #fff;
         border-bottom: 1px solid #999999;
@@ -17,8 +18,87 @@
                     background-repeat: no-repeat;
                     padding: 10px 18px 10px 38px;
                 }
+            }
+        }
 
-                .byfi-search-icon {}
+        .byfi-right-menu {
+            .dropdown {
+                .btn-light {
+                    border-radius: 5px;
+                    padding: 8px 15px;
+                }
+
+                .dropdown-menu {
+                    background-color: #fff;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+            }
+
+            a {
+                padding: 8px 15px;
+                text-decoration: none;
+                color: #333;
+
+                &:hover {
+                    color: #007bff;
+                }
+            }
+        }
+    }
+
+    .byfi-dropdown-menu-container {
+        display: none;
+    }
+
+    @media screen and (max-width: 580px) {
+        .byfi-logo-container {
+            display: none !important;
+        }
+
+        .byfi-right-menu {
+            display: none !important;
+        }
+
+        .byfi-dropdown-menu-container {
+            display: block;
+        }
+    }
+
+    .byfi-bottom-nav-container {
+        .byfi-bottom-nav {
+            padding: 5px;
+            height: 40px;
+
+            ul {
+                list-style: none;
+                padding: 0;
+
+                .nav-item {
+                    position: relative;
+
+                    .dropdown-toggle {
+                        background-color: #f8f9fa;
+                        border: none;
+                        padding: 5px 10px;
+                        border-radius: 4px;
+                    }
+
+                    .dropdown-menu {
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        display: none;
+
+                        .dropdown-item {
+                            color: #000;
+                        }
+                    }
+
+                    &:hover .dropdown-menu , &:focus-within .dropdown-menu{
+                        display: block;
+                    }
+                }
             }
         }
     }
