@@ -1,0 +1,70 @@
+// Main section styling
+.byfi-home-section {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+
+    .byfi-home-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+// Carousel styles
+#carouselExampleIndicators {
+    position: relative;
+
+    .carousel-inner {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        .carousel-item {
+            img {
+                object-fit: cover;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    // Carousel indicators (dots)
+    .carousel-indicators [data-bs-target] {
+        background-color: #007bff; // Custom color for active and inactive indicators
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+    }
+
+    .carousel-indicators .active {
+        background-color: #0056b3; // Darker shade for active indicator
+    }
+
+    // Custom prev/next button styles
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, 0.5); // Darker background for icons
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-control-prev-icon:hover,
+    .carousel-control-next-icon:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+// Media Queries for responsive styling
+@media (max-width: 768px) {
+    .byfi-home-section {
+        padding: 10px 0;
+    }
+
+    .carousel-item img {
+        height: 200px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
