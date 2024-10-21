@@ -1,16 +1,17 @@
-<section class="byfi-nav-section sticky-top shadow">
+<section class="byfi-nav-section">
 
     <!-- top-nav starts here -->
     <div class="byfi-top-nav-container">
 
-        <a href="/home" class="byfi-logo-container d-flex align-items-center">
+        <div class="byfi-logo-container d-flex align-items-center">
             <span class="fluent-emoji--shopping-bags"></span>
-            <h1 class="fs-2 byfi-logo-text">BYFI</h1>
-        </a>
+            <h1 class="fs-2">BYFI</h1>
+        </div>
 
         <div class="byfi-search-form-container">
             <form class="byfi-search-form">
-                <input type="search" name="search" id="search" class="byfi-g-search" placeholder="Search BYFI" />
+                <input type="search" name="search" id="search" class="byfi-g-search" placeholder="Search" />
+                <!-- <span class="byfi-search-icon"></span> -->
             </form>
         </div>
 
@@ -28,56 +29,19 @@
             <a href="/account">Account</a>
         </div>
 
-        <div class="byfi-dropdown-menu-container">
-            <div class="dropdown mb-1">
-                <button class="border-0 bg-transparent d-flex align-items-center" type="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <span class="byfi-top-nav-menu-icon"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/orders">Orders</a></li>
-                    <li><a class="dropdown-item" href="/cart">Cart</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="/profile">Profile</a></li>
-                </ul>
-            </div>
-        </div>
-
     </div>
     <!-- top-nav ends here -->
 
     <!-- bottom-nav starts here -->
-    <div class="byfi-bottom-nav-container bg-white">
-        <nav class="d-flex gap-1 align-items-center byfi-bottom-nav">
-            <!-- <a href="/home">Home</a> -->
+    <div class="byfi-bottom-nav-container">
+        <nav class="d-flex">
+            <a href="/home">Home</a>
 
-            <ul class="d-flex align-items-center gap-1 mt-3">
-                <!-- Loop through the routesArray to display the main routes -->
-                <li *ngFor="let item of routesArray" class="nav-item">
-                    <a [href]="'/' + item.path" *ngIf="!item.subRoutes">
-                        {{ item.name }}
-                    </a>
+            <ul class="d-flex justify-content-between gap-1">
 
-                    <!-- If there are subRoutes, handle them as a dropdown or submenu -->
-                    <div class="dropdown" *ngIf="item.subRoutes">
-                        <button class="border-0 bg-transparent p-0 dropdown-toggle" type="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ item.path }}
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li *ngFor="let sub of item.subRoutes">
-                                <a [href]="'/' + sub.path" class="dropdown-item">{{ sub.name }}</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
             </ul>
         </nav>
     </div>
     <!-- bottom-nav ends here -->
-
-
 
 </section>
