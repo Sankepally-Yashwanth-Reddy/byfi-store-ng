@@ -1,70 +1,167 @@
-// Main section styling
 .byfi-home-section {
-    background-color: #f8f9fa;
-    padding: 20px 0;
+    padding: 2rem;
+    background-color: #f0f0f0;
 
     .byfi-home-container {
         max-width: 1200px;
         margin: 0 auto;
-    }
-}
+        padding: 1rem;
+        height: 100vh;
 
-// Carousel styles
-#carouselExampleIndicators {
-    position: relative;
+        .byfi-top-banner-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-    .carousel-inner {
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            .byfi-top-banner-card {
+                text-align: center;
 
-        .carousel-item {
-            img {
-                object-fit: cover;
-                border-radius: 10px;
+                .byfi-h1-text {
+                    font-size: 2.5rem;
+                    color: #333;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+        .byfi-products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+
+            .byfi-product-card {
+                background-color: #ffffff;
+                border-radius: 12px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s, box-shadow 0.3s;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+                }
+
+                .byfi-product-image-container {
+                    width: 100%;
+                    height: 250px;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #f9f9f9;
+
+                    .byfi-product-image {
+                        max-width: 100%;
+                        max-height: 100%;
+                        object-fit: cover;
+                        transition: transform 0.3s;
+                    }
+
+                    &:hover .byfi-product-image {
+                        transform: scale(1.1);
+                    }
+                }
+
+                .byfi-product-content {
+                    padding: 1.5rem;
+
+                    .byfi-product-title {
+                        font-size: 1.4rem;
+                        color: #333;
+                        font-weight: bold;
+                        margin-bottom: 0.5rem;
+                        text-align: center;
+                    }
+
+                    .byfi-product-description {
+                        font-size: 1rem;
+                        color: #666;
+                        margin-bottom: 1rem;
+                        text-align: justify;
+                    }
+
+                    .byfi-product-price {
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                        color: #000;
+                        text-align: center;
+                        margin-bottom: 1rem;
+                    }
+
+                    .byfi-product-btn {
+                        background-color: #007bff;
+                        color: #fff;
+                        padding: 0.75rem 1.5rem;
+                        border: none;
+                        border-radius: 0.5rem;
+                        cursor: pointer;
+                        transition: background-color 0.3s;
+
+                        &:hover {
+                            background-color: darken($color: #007bff, $amount: 20);
+                        }
+                    }
+
+                    .byfi-add-to-cart-btn {
+                        background-color: #0ff51b;
+                        color: #fff;
+                        padding: 0.75rem 1.5rem;
+                        border: none;
+                        border-radius: 0.5rem;
+                        cursor: pointer;
+                        transition: background-color 0.3s;
+
+                        &:hover {
+                            background-color: darken($color: #0ff51b, $amount: 10);
+                        }
+                    }
+                }
             }
         }
     }
-
-    // Carousel indicators (dots)
-    .carousel-indicators [data-bs-target] {
-        background-color: #007bff; // Custom color for active and inactive indicators
-        border-radius: 50%;
-        width: 12px;
-        height: 12px;
-    }
-
-    .carousel-indicators .active {
-        background-color: #0056b3; // Darker shade for active indicator
-    }
-
-    // Custom prev/next button styles
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        background-color: rgba(0, 0, 0, 0.5); // Darker background for icons
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-    }
-
-    .carousel-control-prev-icon:hover,
-    .carousel-control-next-icon:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
 }
 
-// Media Queries for responsive styling
+// Responsive styles for smaller devices
 @media (max-width: 768px) {
     .byfi-home-section {
-        padding: 10px 0;
-    }
+        padding: 1rem;
 
-    .carousel-item img {
-        height: 200px;
-    }
+        .byfi-products-container {
+            grid-template-columns: 1fr; // Single column layout for smaller screens
+        }
 
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        width: 30px;
-        height: 30px;
+        .byfi-product-card {
+            .byfi-product-image-container {
+                height: 200px;
+            }
+
+            .byfi-product-content {
+                padding: 1rem;
+
+                .byfi-product-title {
+                    font-size: 1.2rem;
+                }
+
+                .byfi-product-description {
+                    font-size: 0.9rem;
+                }
+
+                .byfi-product-price {
+                    font-size: 1.1rem;
+                }
+
+                .byfi-product-btn {
+                    padding: 0.5rem 1rem;
+                }
+            }
+        }
     }
 }

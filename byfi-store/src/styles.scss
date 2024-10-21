@@ -1,19 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
 @import './assets/icons/icons.scss';
 
 :root {
-  input:focus-visible {
-    border: 2px solid #000000;
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --text-color: #343a40;
+
+  input:focus-visible,
+  button:focus-visible {
+    border: 2px solid var(--primary-color);
     outline: none;
   }
-
-  button:focus-visible {
-    border: 2px solid #000000 !important;
-    box-shadow: none !important;
-  }
 }
+
+$primary-color: #007bff;
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.byfi-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+
+  &:disabled {
+    background-color: var(--secondary-color);
+    cursor: not-allowed;
+  }
+}
+
+.byfi-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.byfi-text-center {
+  text-align: center;
+}
+
+.byfi-text-bold {
+  font-weight: bold;
 }

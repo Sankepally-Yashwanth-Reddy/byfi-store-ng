@@ -2,39 +2,33 @@
 
 <section role="main" class="byfi-home-section">
     <div class="byfi-home-container">
-        <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
+        <div class="byfi-top-banner-container">
+            <div class="byfi-top-banner-card" [tabIndex]="0">
+                <h1 class="byfi-h1-text">
+                    Welcome to BYFI (By Your Favorite Items)
+                </h1>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://img.freepik.com/free-vector/horizontal-sale-banner-template_23-2148897327.jpg?w=826&t=st=1729053660~exp=1729054260~hmac=935b7fc34dcfd17322595a1464a55c1060cc013c9b49fab3a607515aeb108680"
-                        class="d-block w-100" alt="banner">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://img.freepik.com/free-psd/horizontal-banner-template-big-sale-with-woman-shopping-bags_23-2148786755.jpg?w=826&t=st=1729053778~exp=1729054378~hmac=b534062108b29b2c55790462b5d25a0e6626206d43bd51a3866691c938599141"
-                        class="d-block w-100" alt="banner">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://img.freepik.com/free-vector/horizontal-banner-template-black-friday-sales_23-2150867247.jpg?t=st=1729059273~exp=1729062873~hmac=f65635113db1211d5c2fe93b61e213bfe7ba7918f304bd563b0e1c59fbdd17e7&w=996"
-                        class="d-block w-100" alt="banner">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
+
+        <div *ngIf="products.length > 0; else noProducts" class="byfi-products-container">
+            <div *ngFor="let product of products" class="byfi-product-card" [tabIndex]="0">
+                <div class="byfi-product-image-container">
+                    <img [src]="product.image" alt="{{ product.title }}" class="byfi-product-image">
+                </div>
+                <div class="byfi-product-content">
+                    <h2 class="byfi-product-title">{{ product.title }}</h2>
+                    <p class="byfi-product-description">{{ product.description }}</p>
+                    <p class="byfi-product-price">Price: {{ product.price | currency }}</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="byfi-product-btn w-100 m-1">Buy Now</button>
+                        <button class="byfi-add-to-cart-btn w-100 m-1">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ng-template #noProducts>
+            <p class="byfi-no-products">No products available.</p>
+        </ng-template>
     </div>
 </section>
